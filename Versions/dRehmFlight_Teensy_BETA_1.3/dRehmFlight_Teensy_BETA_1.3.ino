@@ -35,6 +35,7 @@ Everyone that sends me pictures and videos of your flying creations! -Nick
 //#define USE_PPM_RX
 //#define USE_SBUS_RX
 //#define USE_DSM_RX
+// #define USE_CRSF_RX
 static const uint8_t num_DSM_channels = 6; //If using DSM RX, change this to match the number of transmitter channels you have
 
 //Uncomment only one IMU
@@ -71,6 +72,10 @@ static const uint8_t num_DSM_channels = 6; //If using DSM RX, change this to mat
 
 #if defined USE_DSM_RX
   #include "src/DSMRX/DSMRX.h"  
+#endif
+
+#if defined USE_CRSF_RX
+ #include "src/CrsfSerial/CrsfSerial.h"
 #endif
 
 #if defined USE_MPU6050_I2C
